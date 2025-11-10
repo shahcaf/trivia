@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Trivia Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Animated Background -->
+        <div class="lightning-container">
+            <div class="lightning white"></div>
+            <div class="lightning blue"></div>
+        </div>
+        
+        <div class="particles" id="particles-js"></div>
+        
+        <div class="container">
+            <!-- Intro Screen -->
+            <div id="intro-screen" class="screen">
+                <div class="intro-content">
+                    <div class="logo">
+                        <i class="fas fa-bolt"></i>
+                        <h1>Tesla Trivia</h1>
+                        <div class="subtitle">The Forgotten Genius</div>
+                    </div>
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="he">עברית</button>
+                    </div>
+                    <button id="start-btn" class="btn pulse">Start Quiz</button>
+                </div>
+            </div>
+            
+            <!-- Quiz Screen -->
+            <div id="quiz-screen" class="screen hidden">
+                <div class="header">
+                    <div class="score">
+                        <i class="fas fa-bolt"></i>
+                        <span id="score">0</span>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question" id="question"></div>
+                    <div class="options" id="options"></div>
+                </div>
+                
+                <button id="next-btn" class="btn">Next Question</button>
+            </div>
+            
+            <!-- Results Screen -->
+            <div id="results-screen" class="screen hidden">
+                <div class="results-content">
+                    <h2>Quiz Completed!</h2>
+                    <div class="score-container">
+                        <div class="final-score">
+                            <span id="final-score">0</span>/10
+                        </div>
+                        <div class="score-message" id="score-message"></div>
+                    </div>
+                    <div class="actions">
+                        <button id="restart-btn" class="btn">Play Again</button>
+                        <button id="menu-btn" class="btn btn-outline">
+                            <i class="fas fa-home"></i> Return to Menu
+                        </button>
+                        <button id="share-btn" class="btn btn-outline">
+                            <i class="fas fa-share"></i> Share Score
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Audio Elements -->
+        <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3"></audio>
+        <audio id="wrong-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3"></audio>
+        <audio id="complete-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"></audio>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
